@@ -1,0 +1,43 @@
+﻿<Window x:Class="marathon_tray.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tb="http://www.hardcodet.net/taskbar"
+        xmlns:local="clr-namespace:marathon_tray"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Icon="images/marathon.ico"
+        ShowInTaskbar="False"
+        Visibility="Hidden"
+        Height="350" 
+        Width="525">
+    <tb:TaskbarIcon x:Name="myNotifyIcon"
+                    Visibility="Visible"
+                    IconSource="images/marathon.ico"
+                    ContextMenu="{x:Null}"
+                    MenuActivation="LeftClick"
+                    PopupActivation="RIghtClick">
+        <tb:TaskbarIcon.TrayPopup>
+            <Border
+                Background="White"
+                BorderBrush="Orange"
+                BorderThickness="2"
+                CornerRadius="4"
+                Width="160"
+                Height="40">
+                
+                <!-- for now, hook into the simple workbench from here.   -->
+                <!-- other todos:  
+                    1. change the color of the icon from green to red depending on connection state
+                    2. support toaster-style notifications
+                -->
+                
+                <Button 
+                    Content="Click Me!"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center" />
+            </Border>
+        </tb:TaskbarIcon.TrayPopup>
+    </tb:TaskbarIcon>
+</Window>
